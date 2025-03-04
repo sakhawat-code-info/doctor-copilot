@@ -21,59 +21,73 @@ const AddDiseasePage = () => {
 
   return (
     <div className="p-6 max-w-lg mx-auto bg-white shadow-md rounded-md">
-      <h2 className="text-2xl font-bold mb-4">Add Disease</h2>
+      <div className="flex items-center justify-center">
+        <h2 className="text-2xl font-bold mb-4">Add Disease</h2>
+      </div>
       <form onSubmit={handleSubmit}>
+        <label className="block font-semibold">Disease Name</label>
         <input
           type="text"
           name="disease_name"
-          placeholder="Disease Name"
+          placeholder="Enter Disease Name"
           value={disease.disease_name}
           onChange={handleChange}
           className="w-full p-2 mb-2 border rounded"
         />
+
+        <label className="block font-semibold">Chief Complaints</label>
         <input
           type="text"
           name="chief_complaints"
-          placeholder="Chief Complaints (comma separated)"
+          placeholder="Comma separated values"
           value={disease.chief_complaints}
           onChange={handleChange}
           className="w-full p-2 mb-2 border rounded"
         />
+
+        <label className="block font-semibold">Investigation</label>
         <input
           type="text"
           name="investigation"
-          placeholder="Investigation (comma separated)"
+          placeholder="Comma separated values"
           value={disease.investigation}
           onChange={handleChange}
           className="w-full p-2 mb-2 border rounded"
         />
+
+        <label className="block font-semibold">Advice</label>
         <input
           type="text"
           name="advice"
-          placeholder="Advice (comma separated)"
+          placeholder="Comma separated values"
           value={disease.advice}
           onChange={handleChange}
           className="w-full p-2 mb-2 border rounded"
         />
+
+        <label className="block font-semibold">Treatment</label>
         <input
           type="text"
           name="treatment"
-          placeholder="Treatment (comma separated)"
+          placeholder="Comma separated values"
           value={disease.treatment}
           onChange={handleChange}
           className="w-full p-2 mb-2 border rounded"
         />
+
+        <label className="block font-semibold">Next Visit</label>
         <input
           type="text"
           name="next_visit"
-          placeholder="Next Visit"
+          placeholder="Enter Next Visit Date"
           value={disease.next_visit}
           onChange={handleChange}
           className="w-full p-2 mb-2 border rounded"
         />
+
         <button
           type="submit"
-          className="bg-blue-500 text-white p-2 rounded w-full"
+          className="bg-blue-500 text-white p-2 rounded w-full mt-2"
         >
           Submit
         </button>
