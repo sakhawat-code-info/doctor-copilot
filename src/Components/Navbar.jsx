@@ -27,13 +27,46 @@ const Navbar = () => {
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="lg:flex lg:gap-x-5">
-            <li><Link to="/disease" className="hover:text-blue-500">Disease</Link></li>
-            <li><Link to="/hospital_info" className="hover:text-blue-500">Hospital Info</Link></li>
-            <li><Link to="/health_tips" className="hover:text-blue-500">Health Tips</Link></li>
-            <li><Link to="/diet_chart" className="hover:text-blue-500">Diet Chart</Link></li>
-            <li><Link to="/ambulance_near_me" className="hover:text-blue-500">Ambulance Near Me</Link></li>
-            <li><Link to="/doctor_list" className="hover:text-blue-500">Doctor List</Link></li>
-            <li><Link to="/contact_us" className="hover:text-blue-500">Contact Us</Link></li>
+            <li>
+              <Link to="/disease" className="hover:text-blue-500">
+                Disease
+              </Link>
+            </li>
+            <li>
+              <Link to="/hospital_info" className="hover:text-blue-500">
+                Hospital Info
+              </Link>
+            </li>
+            <li>
+              <Link to="/health_tips" className="hover:text-blue-500">
+                Health Tips
+              </Link>
+            </li>
+            <li>
+              <Link to="/diet_chart" className="hover:text-blue-500">
+                Diet Chart
+              </Link>
+            </li>
+            <li>
+              <Link to="/ambulance_near_me" className="hover:text-blue-500">
+                Ambulance Near Me
+              </Link>
+            </li>
+            <li>
+              <Link to="/doctor_list" className="hover:text-blue-500">
+                Doctor List
+              </Link>
+            </li>
+            <li>
+              <Link to="/contact_us" className="hover:text-blue-500">
+                Contact Us
+              </Link>
+            </li>
+            <li>
+              <Link to="/add_disease" className="hover:text-blue-500">
+                Add Disease
+              </Link>
+            </li>
           </ul>
         </div>
         <div className="navbar-end">

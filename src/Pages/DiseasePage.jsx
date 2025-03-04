@@ -112,39 +112,77 @@ const DiseasePage = () => {
       {/* Modal */}
       {isModalOpen && selectedPrescription && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-          <div className="bg-white p-8 rounded-lg max-w-xl w-full">
-            <h2 className="text-2xl font-bold text-blue-700 mb-4">
-              {selectedPrescription.disease_name}
-            </h2>
-            <p>
-              <strong>Chief Complaints:</strong>{" "}
-              {selectedPrescription.chief_complaints.join(", ")}
-            </p>
-            <p>
-              <strong>Investigation:</strong>{" "}
-              {selectedPrescription.investigation.join(", ")}
-            </p>
-            <p>
-              <strong>Advice:</strong> {selectedPrescription.advice.join(", ")}
-            </p>
-            <h3 className="font-semibold mt-3">Treatment:</h3>
-            <ul className="list-disc pl-5">
-              {selectedPrescription.treatment.map((treat, i) => (
-                <li key={i}>
-                  <strong>{treat.medicine}</strong> ({treat.generic_name}) -{" "}
-                  {treat.dosage}
-                </li>
-              ))}
-            </ul>
-            <p className="mt-3 font-semibold">
-              Next Visit: {selectedPrescription.next_visit}
-            </p>
-            <button
-              onClick={closeModal}
-              className="mt-4 bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600"
-            >
-              Close
-            </button>
+          <div className="bg-white p-8 rounded-lg max-w-2xl w-full">
+            <div className="flex items-center justify-between">
+              <div>
+                <p className="font-semibold">
+                  Name: <span className="font-light">Mr. Jon</span>
+                </p>
+                <p className="font-semibold">
+                  Age: <span className="font-light">30 Years</span>
+                </p>
+              </div>
+              <div>
+                <p className="font-semibold">
+                  Date: <span className="font-light">22/03/2025</span>
+                </p>
+                <p className="font-semibold">
+                  Sex: <span className="font-light">M/F</span>
+                </p>
+              </div>
+            </div>
+            <div className="flex items-center justify-center">
+              <h2 className="text-2xl font-bold text-blue-700 mb-4">
+                {selectedPrescription.disease_name}
+              </h2>
+            </div>
+
+            <div className="flex space-x-8 mt-6">
+              {/* Left Column */}
+              <div className="w-1/2">
+                <h3 className="font-semibold">C/C</h3>
+                <ul className="list-disc pl-5">
+                  {selectedPrescription.chief_complaints.map((complaint, i) => (
+                    <li key={i}>{complaint}</li>
+                  ))}
+                </ul>
+                <h3 className="font-semibold mt-4">Investigation</h3>
+                <ul className="list-disc pl-5">
+                  {selectedPrescription.investigation.map((invest, i) => (
+                    <li key={i}>{invest}</li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Right Column */}
+              <div className="w-1/2">
+                <h3 className="font-semibold">Rx</h3>
+                <ul className="list-disc pl-5">
+                  {selectedPrescription.treatment.map((treat, i) => (
+                    <li key={i}>
+                      <strong>{treat.medicine}</strong> ({treat.generic_name}) -{" "}
+                      {treat.dosage}
+                    </li>
+                  ))}
+                </ul>
+
+                <h3 className="font-semibold mt-4">Advice</h3>
+                <ul className="list-disc pl-5">
+                  {selectedPrescription.advice.map((adv, i) => (
+                    <li key={i}>{adv}</li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+
+            <div className="flex justify-end ">
+              <button
+                onClick={closeModal}
+                className="mt-6 bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600"
+              >
+                Close
+              </button>
+            </div>
           </div>
         </div>
       )}

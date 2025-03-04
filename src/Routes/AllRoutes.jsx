@@ -9,6 +9,7 @@ import HospitalInfoPage from "../Pages/HospitalInfoPage";
 import DietChartPage from "../Pages/DietChartPage";
 import AmbulanceNearMePage from "../Pages/AmbulanceNearMePage";
 import DoctorListPage from "../Pages/DoctorListPage";
+import AddDiseasePage from "../Pages/AddDiseasePage";
 
 export const router = createBrowserRouter([
   {
@@ -47,6 +48,10 @@ export const router = createBrowserRouter([
       {
         path: "/doctor_list",
         element: <DoctorListPage />,
+      },
+      {
+        path: "/add_disease",
+        element: <AddDiseasePage />,
       },
     ],
   },
