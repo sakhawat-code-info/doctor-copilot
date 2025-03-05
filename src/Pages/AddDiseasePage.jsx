@@ -20,9 +20,11 @@ const AddDiseasePage = () => {
   };
 
   return (
-    <div className="p-6 max-w-lg mx-auto bg-white shadow-md rounded-md">
-      <div className="flex items-center justify-center">
-        <h2 className="text-2xl font-bold mb-4">Add Disease</h2>
+    <div className="mt-10 p-6 max-w-lg mx-auto bg-white shadow-md rounded-md">
+      <div className="text-center mb-10">
+        <h2 className="text-3xl font-extrabold text-gray-800 inline-block relative after:absolute after:w-4/6 after:h-1 after:left-0 after:right-0 after:-bottom-4 after:mx-auto after:bg-pink-400 after:rounded-full">
+          Add Disease
+        </h2>
       </div>
       <form onSubmit={handleSubmit}>
         <label className="block font-semibold">Disease Name</label>

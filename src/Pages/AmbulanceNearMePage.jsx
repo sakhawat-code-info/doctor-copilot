@@ -1,26 +1,45 @@
-import { useState } from 'react';
+import { useState } from "react";
 
 const AmbulanceNearMePage = () => {
-  const [location, setLocation] = useState('');
+  const [location, setLocation] = useState("");
   const [ambulances, setAmbulances] = useState([]);
 
   const handleSearch = () => {
     // Fetch ambulance data based on location (this could be a real API request)
     // For now, let's simulate it with mock data:
     const mockData = [
-      { id: 1, name: 'City Ambulance', phone: '123-456-7890', distance: '2 km' },
-      { id: 2, name: 'Emergency Response', phone: '987-654-3210', distance: '5 km' },
-      { id: 3, name: 'Quick Help Ambulance', phone: '555-666-7777', distance: '3 km' },
+      {
+        id: 1,
+        name: "City Ambulance",
+        phone: "123-456-7890",
+        distance: "2 km",
+      },
+      {
+        id: 2,
+        name: "Emergency Response",
+        phone: "987-654-3210",
+        distance: "5 km",
+      },
+      {
+        id: 3,
+        name: "Quick Help Ambulance",
+        phone: "555-666-7777",
+        distance: "3 km",
+      },
     ];
 
     setAmbulances(mockData); // In a real case, you'd filter based on `location`
   };
 
   return (
-    <div className="container mx-auto p-4">
-      <h1 className="text-3xl font-semibold text-center mb-6">Find Ambulance Near You</h1>
+    <div className="container mx-auto p-4 my-4">
+      <div className="text-center">
+        <h2 className="text-3xl font-extrabold text-gray-800 inline-block relative after:absolute after:w-4/6 after:h-1 after:left-0 after:right-0 after:-bottom-4 after:mx-auto after:bg-pink-400 after:rounded-full">
+          Find Ambulance Near You
+        </h2>
+      </div>
 
-      <div className="mb-6">
+      <div className="mt-10">
         <input
           type="text"
           placeholder="Enter your location"
@@ -41,10 +60,17 @@ const AmbulanceNearMePage = () => {
           <h2 className="text-2xl font-bold">Nearby Ambulances</h2>
           <ul className="mt-2">
             {ambulances.map((ambulance) => (
-              <li key={ambulance.id} className="bg-white p-4 rounded shadow-md mb-4">
+              <li
+                key={ambulance.id}
+                className="bg-white p-4 rounded shadow-md mb-4"
+              >
                 <h3 className="font-semibold">{ambulance.name}</h3>
-                <p><strong>Phone:</strong> {ambulance.phone}</p>
-                <p><strong>Distance:</strong> {ambulance.distance}</p>
+                <p>
+                  <strong>Phone:</strong> {ambulance.phone}
+                </p>
+                <p>
+                  <strong>Distance:</strong> {ambulance.distance}
+                </p>
               </li>
             ))}
           </ul>
