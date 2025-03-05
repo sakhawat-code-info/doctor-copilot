@@ -248,7 +248,9 @@ const DoctorListPage = () => {
         {modalOpen && selectedDoctor && (
           <div className="fixed inset-0 bg-gray-500 bg-opacity-50 flex items-center justify-center">
             <div className="bg-white p-6 rounded-lg shadow-lg w-4/5 md:w-1/3">
-              <h2 className="text-2xl font-semibold mb-4">Book Appointment</h2>
+              <h2 className="text-2xl font-semibold mb-4 text-center">
+                Book Appointment
+              </h2>
               <p>
                 <strong>Doctor:</strong> {selectedDoctor.name}
               </p>
@@ -256,50 +258,68 @@ const DoctorListPage = () => {
                 <strong>Degree:</strong> {selectedDoctor.degree}
               </p>
               <p>
+                <strong>Specialization:</strong> {selectedDoctor.specialization}
+              </p>
+              <p>
                 <strong>Chamber Location:</strong>{" "}
                 {selectedDoctor.chamberLocation}
               </p>
-              <p>
-                <strong>Specialization:</strong> {selectedDoctor.specialization}
-              </p>
 
               {/* Available Days (Selectable) */}
-              <div className="mb-4">
-                <label className="block text-sm font-medium text-gray-700">
+
+              <div className="flex items-center">
+                <h1 className="mr-10 mt-10">
+                  <strong>Available days</strong>
+                </h1>
+                <div className="mb-4 mt-10">
+                  {/* <label className="block text-sm font-medium text-gray-700 mb-2">
                   Available Day:
-                </label>
-                <select
-                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50"
-                  value={selectedDay}
-                  onChange={(e) => setSelectedDay(e.target.value)}
-                >
-                  <option value="">Select Day</option>
-                  {selectedDoctor.available.map((day) => (
-                    <option key={day} value={day}>
-                      {day}
-                    </option>
-                  ))}
-                </select>
+                </label> */}
+                  <div className="flex space-x-3">
+                    {selectedDoctor.available.map((day) => (
+                      <label
+                        key={day}
+                        className={`cursor-pointer px-4 py-2 rounded-full text-sm font-medium border transition-all ${
+                          selectedDay === day
+                            ? "bg-blue-600 text-white border-blue-600"
+                            : "bg-gray-100 text-gray-700 border-gray-300 hover:bg-blue-100"
+                        }`}
+                      >
+                        <input
+                          type="radio"
+                          name="availableDay"
+                          value={day}
+                          checked={selectedDay === day}
+                          onChange={() => setSelectedDay(day)}
+                          className="hidden"
+                        />
+                        {day.substring(0, 3)}
+                      </label>
+                    ))}
+                  </div>
+                </div>
               </div>
 
-              <div className="mt-4">
-                <label htmlFor="appointmentTime">Select Time:</label>
-                <input
-                  type="time"
-                  id="appointmentTime"
-                  name="appointmentTime"
-                  className="w-full mt-2 p-2 border border-gray-300 rounded-md"
-                />
-              </div>
+              <div className="flex justify-between">
+                <div className="mt-4">
+                  <label htmlFor="appointmentDate">Select Date:</label>
+                  <input
+                    type="date"
+                    id="appointmentDate"
+                    name="appointmentDate"
+                    className="w-full mt-2 p-2 border border-gray-300 rounded-md"
+                  />
+                </div>
 
-              <div className="mt-4">
-                <label htmlFor="appointmentDate">Select Date:</label>
-                <input
-                  type="date"
-                  id="appointmentDate"
-                  name="appointmentDate"
-                  className="w-full mt-2 p-2 border border-gray-300 rounded-md"
-                />
+                <div className="mt-4">
+                  <label htmlFor="appointmentTime">Select Time:</label>
+                  <input
+                    type="time"
+                    id="appointmentTime"
+                    name="appointmentTime"
+                    className="w-full mt-2 p-2 border border-gray-300 rounded-md"
+                  />
+                </div>
               </div>
 
               <div className="mt-4 flex justify-between">
