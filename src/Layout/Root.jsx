@@ -5,7 +5,7 @@ import Navbar from "../Components/Navbar";
 const Root = () => {
   return (
     <div className=" max-w-[1920px] lg:w-[90%] w-[98%] mx-auto font-mont ">
-      <Navbar />
+      {/* <Navbar /> */}
 
       <div className="min-h-[calc(100vh-520.667px)]">
         {/* <Outlet></Outlet> */}
