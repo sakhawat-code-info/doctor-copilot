@@ -9,14 +9,14 @@ const Navbar = () => {
   };
 
   const menuItems = [
-    { to: "/disease", label: "Disease" },
+    { to: "/doctor_list", label: "Doctor List" },
     { to: "/hospital_info", label: "Hospital Info" },
+    { to: "/ambulance_near_me", label: "Ambulance Near Me" },
     { to: "/health_tips", label: "Health Tips" },
     { to: "/diet_chart", label: "Diet Chart" },
-    { to: "/ambulance_near_me", label: "Ambulance Near Me" },
-    { to: "/doctor_list", label: "Doctor List" },
     { to: "/contact_us", label: "Contact Us" },
-    { to: "/add_disease", label: "Add Disease" },
+    // { to: "/disease", label: "Disease" },
+    // { to: "/add_disease", label: "Add Disease" },
   ];
 
   return (
